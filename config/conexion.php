@@ -1,0 +1,33 @@
+<?php 
+class conectar { 
+
+protected $dbh; 
+
+//Conexion////////////////////////////////////////////////////////
+protected function Conexion (){ 
+
+try { 
+
+$conectar=$this->dbh=new PDO("mysql:local=localhost;dbname=php-api", "root","" ) ;
+return $conectar;
+
+
+
+}catch(Exception $e){ 
+
+    print"error DB:" .$e->getMessage(). "<br/>"; 
+    die();
+}
+
+}
+////////////////////////////////////////////////FIN//////////////////////////////////////
+public function set_name(){ 
+
+return $this->dbh->query ("SET NAMES 'utf8'");
+
+
+}
+
+
+}
+?>
